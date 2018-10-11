@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>EtherCloud Solutions</title>
+     <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div id="container">
+      <div id="header"><h1>EtherCloud Solutions</h1></div>
+      <div id="form">
+        <form name="regform" action="#" onsubmit="validate()">
+          <input id="username" type="text" placeholder="Username"><br>
+          <input id="password" type="text" placeholder="Password"><br>
+          <input id="register" type="submit" value="Register">
+        </form>
+      </div>
+    </div>
+    <script>
+      function validate() {
+        var username_val = /[\w.-_]+/;
+        var password_val = /(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z])(?=\D*\d)(?=[^!*%.&]*[!*%.&])(.{10,20})/;
+
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        if (!username_val.test(username)) {
+
+          alert("Usernames can only contain the following characters:\nA-Z 0-9 . - _");
+          return false;
+        }
+        if (!password_val.test(password)) {
+
+          alert("Passwords must be between 10 and 20 characters in length and contain both upper and lowercase letters, at least one number, and one of the following characters: ! * . % &");
+          return false;
+
+        }
+      }
+    </script>
+  </body>
+</html>
