@@ -16,8 +16,8 @@
     </div>
     <script>
       function validate() {
-        var username_val = /[\w.-_]+/;
-        var password_val = /(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z])(?=\D*\d)(?=[^!*%.&]*[!*%.&])(.{10,20})/;
+        var username_val = REGEX;
+        var password_val = REGEX;
 
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
