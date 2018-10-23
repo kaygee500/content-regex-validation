@@ -8,19 +8,38 @@
       <div id="header"><h1>EtherCloud Solutions</h1></div>
       <div id="form">
         <form name="regform" action="#" onsubmit="validate()">
+          <input id="name" type="text" placeholder="Name"><br>
+          <input id="email" type="text" placeholder="Email"><br>
           <input id="username" type="text" placeholder="Username"><br>
           <input id="password" type="text" placeholder="Password"><br>
+          <input id="credit" type="text" placeholder="Credit Card"><br>
           <input id="register" type="submit" value="Register">
         </form>
       </div>
     </div>
     <script>
-      function validate() {
-        var username_val = /[\w.-_]+/;
-        var password_val = /(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z])(?=\D*\d)(?=[^!*%.&]*[!*%.&])(.{10,20})/;
 
+▽
+      function validate() {
+        var name_val = /^(?=\S*\s)[A-Za-z ]+$/;
+        var email_val = /^[\w[\w.-]+@\w[\w.-]+\.[A-Za-z.]{2,63}$/;
+        var username_val = /^[\w.-]+$/;
+        var password_val = /^(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z])(?=\D*\d)(?=[^!*%.&]*[!*%.&])(.{10,20})$/;
+        var credit_val = /^\d{13,16}$/;
+
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
+        var credit = document.getElementById('credit').value;
+        if (!name_val.test(name)) {
+          alert("Please input your full name");
+          return false;
+        }
+        if (!email_val.test(email)) {
+          alert("Please input a valid email");
+          return false;
+        }
         if (!username_val.test(username)) {
 
           alert("Usernames can only contain the following characters:\nA-Z 0-9 . - _");
@@ -31,6 +50,10 @@
           alert("Passwords must be between 10 and 20 characters in length and contain both upper and lowercase letters, at least one number, and one of the following characters: ! * . % &");
           return false;
 
+        }
+        if (!credit_val.test(credit)) {
+          alert("Please input a valid credit card");
+          return false;
         }
       }
     </script>
