@@ -21,11 +21,11 @@
 
 ▽
       function validate() {
-        var name_val = /^(?=\S*\s)[A-Za-z ]+$/;
-        var email_val = /^[\w[\w.-]+@\w[\w.-]+\.[A-Za-z.]{2,63}$/;
-        var username_val = /^[\w.-]+$/;
-        var password_val = /^(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z])(?=\D*\d)(?=[^!*%.&]*[!*%.&])(.{10,20})$/;
-        var credit_val = /^\d{13,16}$/;
+        var name_val = /^.+$/;
+        var email_val = /^.+$/;
+        var username_val = /^.+$/;
+        var password_val = /^.+$/;
+        var credit_val = /^.+$/;
 
         var name = document.getElementById('name').value;
         var email = document.getElementById('email').value;
